@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -42,11 +44,20 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Image.asset('assets/image/test.gif',width: 200,height: 200,)
+
+      body:Container(
+          decoration: BoxDecoration(
+            gradient: SweepGradient(
+              center: FractionalOffset.center,
+              startAngle: 0.0,
+              endAngle: pi * 2,
+              colors: const <Color>[
+                Color(0xFF4285F4), // blue
+                Color(0xFFEA4335), // red
+              ],
+              stops: const <double>[0.0, 0.25,],
+            ),
+          )
       ),
     );
   }
