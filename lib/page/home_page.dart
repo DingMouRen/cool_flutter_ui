@@ -1,31 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui/config/RouterManager.dart';
+import 'package:flutter_ui/config/router_manager.dart';
 import 'package:oktoast/oktoast.dart';
 
 class HomePage extends StatelessWidget{
 
   final List<String> listGif = [
     'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
-    'assets/image/test.gif',
+
 
   ];
   
@@ -66,7 +48,7 @@ class HomePage extends StatelessWidget{
   _getItem(int index,BuildContext context) {
     return  InkWell(
       onTap: (){
-        RouterManager.to('page1', context);
+        RouterManager.to(index, context);
       },
       child: Card(
           child: Image.asset(listGif[index]),

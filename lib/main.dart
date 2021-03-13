@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_ui/config/RouterManager.dart';
+import 'package:flutter_ui/config/router_manager.dart';
 import 'package:flutter_ui/page/home_page.dart';
+import 'package:flutter_ui/page/page1/page_1.dart';
 import 'package:oktoast/oktoast.dart';
 
 void main() {
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
             brightness: Brightness.dark
         ),
         home: HomePage(),
+        // home: Page1(),
       ),
     );
   }
