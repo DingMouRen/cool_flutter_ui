@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_ui/page/page1/dial_plate.dart';
+import 'package:flutter_ui/pages/page1/dial_plate.dart';
 
 class Page1 extends StatefulWidget {
   @override
