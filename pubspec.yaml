@@ -32,3 +32,4 @@ flutter:
   assets:
     - assets/image/test.gif
     - assets/image/test2.jpg
+    - assets/screenShot/

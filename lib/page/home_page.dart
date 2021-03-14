@@ -6,7 +6,14 @@ import 'package:oktoast/oktoast.dart';
 class HomePage extends StatelessWidget{
 
   final List<String> listGif = [
-    'assets/image/test.gif',
+    'assets/screenShot/page1.gif',
+    'assets/screenShot/page1.gif',
+    'assets/screenShot/page1.gif',
+    'assets/screenShot/page1.gif',
+    'assets/screenShot/page1.gif',
+    'assets/screenShot/page1.gif',
+    'assets/screenShot/page1.gif',
+    'assets/screenShot/page1.gif',
 
 
   ];
@@ -53,8 +60,8 @@ class HomePage extends StatelessWidget{
       child: Card(
           child: Image.asset(listGif[index]),
           elevation: 6,
-          shadowColor: Colors.primaries[index % Colors.primaries.length],
-          color: Colors.primaries[index % Colors.primaries.length],
+          // shadowColor: Colors.primaries[index % Colors.primaries.length],
+          color: Colors.white,
         ),
     );
   }

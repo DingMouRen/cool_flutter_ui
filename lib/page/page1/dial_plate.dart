@@ -44,7 +44,7 @@ class DialPlate extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     _timeParagraphBuilder = ParagraphBuilder(ParagraphStyle(
-        textAlign: TextAlign.start,
+        textAlign: TextAlign.center,
         fontSize: 70,
         maxLines: 1,
         fontWeight: FontWeight.bold));
@@ -100,8 +100,8 @@ class DialPlate extends CustomPainter {
       _timeParagraphBuilder.addText(_getTimeStr(hour, minute));
 
       Paragraph paragraph = _timeParagraphBuilder.build();
-      paragraph.layout(ParagraphConstraints(width: 214));
-      canvas.drawParagraph(paragraph, Offset(-107,-42));
+      paragraph.layout(ParagraphConstraints(width: 230));
+      canvas.drawParagraph(paragraph, Offset(-115,-42));
       canvas.restore();
     }
 
