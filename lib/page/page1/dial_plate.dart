@@ -1,6 +1,6 @@
 import 'dart:math';
-import 'dart:ui';
-
+import 'dart:ui' ;
+import 'dart:ui' as ui show TextStyle;
 import 'package:flutter/material.dart';
 
 ///表盘
@@ -88,10 +88,20 @@ class DialPlate extends CustomPainter {
 
       //绘制文字
       canvas.save();
+      // _timeParagraphBuilder.pushStyle(ui.TextStyle(
+      //     shadows: [
+      //       Shadow(
+      //         offset: Offset(0,0),
+      //         blurRadius: 3.0,
+      //         color: Color.fromARGB(255, 0, 0, 0),
+      //       ),
+      //     ]
+      // ));
       _timeParagraphBuilder.addText(_getTimeStr(hour, minute));
+
       Paragraph paragraph = _timeParagraphBuilder.build();
-      paragraph.layout(ParagraphConstraints(width: 182));
-      canvas.drawParagraph(paragraph, Offset(-91, -46));
+      paragraph.layout(ParagraphConstraints(width: 214));
+      canvas.drawParagraph(paragraph, Offset(-107,-42));
       canvas.restore();
     }
 
