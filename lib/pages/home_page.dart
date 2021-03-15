@@ -14,6 +14,11 @@ class HomePage extends StatelessWidget{
     'assets/screenShot/page1.gif',
     'assets/screenShot/page1.gif',
     'assets/screenShot/page1.gif',
+    'assets/screenShot/page1.gif',
+    'assets/screenShot/page1.gif',
+    'assets/screenShot/page1.gif',
+    'assets/screenShot/page1.gif',
+    'assets/screenShot/page1.gif',
 
 
   ];
