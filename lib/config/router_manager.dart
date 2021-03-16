@@ -5,6 +5,7 @@ import 'package:flutter_ui/pages/page2/page_2.dart';
 import 'package:flutter_ui/pages/page3/page_3.dart';
 import 'package:flutter_ui/pages/page4/page_4.dart';
 import 'package:flutter_ui/pages/page5/page_5.dart';
+import 'package:flutter_ui/pages/page6/page_6.dart';
 
 
 class RouterManager{
@@ -14,7 +15,8 @@ class RouterManager{
     Page2(),
     Page3(),
     Page4(),
-    Page5()
+    Page5(),
+    Page6()
   ];
 
    static to(int index,BuildContext context){
