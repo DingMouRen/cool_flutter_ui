@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'nm_box.dart';
 
@@ -43,23 +42,23 @@ class Page6 extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    NMButton(icon: FontAwesomeIcons.facebookF),
+                    NMButton(icon: Icons.save),
                     SizedBox(width: 25),
-                    NMButton(icon: FontAwesomeIcons.twitter),
+                    NMButton(icon: Icons.save),
                     SizedBox(width: 25),
-                    NMButton(icon: FontAwesomeIcons.instagram),
+                    NMButton(icon: Icons.save),
                   ],
                 ),
                 Spacer(),
                 Row(
                   children: <Widget>[
                     SocialBox(
-                        icon: FontAwesomeIcons.dribbble,
+                        icon: Icons.save,
                         count: '35',
                         category: 'shots'),
                     SizedBox(width: 15),
                     SocialBox(
-                        icon: FontAwesomeIcons.userAlt,
+                        icon: Icons.save,
                         count: '1.2k',
                         category: 'followers'),
                   ],
@@ -68,12 +67,12 @@ class Page6 extends StatelessWidget {
                 Row(
                   children: <Widget>[
                     SocialBox(
-                        icon: FontAwesomeIcons.heart,
+                        icon: Icons.save,
                         count: '5.1k',
                         category: 'likes'),
                     SizedBox(width: 15),
                     SocialBox(
-                        icon: FontAwesomeIcons.user,
+                        icon: Icons.save,
                         count: '485',
                         category: 'following'),
                   ],
@@ -82,12 +81,12 @@ class Page6 extends StatelessWidget {
                 Row(
                   children: <Widget>[
                     SocialBox(
-                        icon: FontAwesomeIcons.glassWhiskey,
+                        icon: Icons.save,
                         count: '97',
                         category: 'buckets'),
                     SizedBox(width: 15),
                     SocialBox(
-                        icon: FontAwesomeIcons.folderOpen,
+                        icon: Icons.save,
                         count: '7',
                         category: 'projects'),
                   ],
@@ -132,16 +131,16 @@ class Page6 extends StatelessWidget {
                               mainAxisAlignment:
                               MainAxisAlignment.spaceEvenly,
                               children: <Widget>[
-                                Icon(FontAwesomeIcons.facebookF, color: fCL),
-                                Icon(FontAwesomeIcons.twitter, color: fCL),
-                                Icon(FontAwesomeIcons.instagram, color: fCL),
-                                Icon(FontAwesomeIcons.whatsapp, color: fCL),
+                                Icon(Icons.save, color: fCL),
+                                Icon(Icons.save, color: fCL),
+                                Icon(Icons.save, color: fCL),
+                                Icon(Icons.save, color: fCL),
                               ],
                             ),
                           ),
                           SizedBox(height: 25),
-                          FaIcon(
-                            FontAwesomeIcons.copy,
+                          Icon(
+                            Icons.save,
                             color: Colors.pink.shade800,
                           ),
                           Text(
@@ -162,9 +161,9 @@ class Page6 extends StatelessWidget {
 }
 
 class SocialBox extends StatelessWidget {
-  final IconData icon;
-  final String count;
-  final String category;
+  final IconData? icon;
+  final String? count;
+  final String? category;
 
   const SocialBox({this.icon, this.count, this.category});
 
@@ -176,15 +175,15 @@ class SocialBox extends StatelessWidget {
         decoration: nMboxInvert,
         child: Row(
           children: <Widget>[
-            FaIcon(icon, color: Colors.pink.shade800, size: 20),
+            Icon(icon!, color: Colors.pink.shade800, size: 20),
             SizedBox(width: 8),
             Text(
-              count,
+              count!,
               style: TextStyle(fontWeight: FontWeight.w700),
             ),
             SizedBox(width: 3),
             Text(
-              category,
+              category!,
             ),
           ],
         ),
@@ -194,7 +193,7 @@ class SocialBox extends StatelessWidget {
 }
 
 class NMButton extends StatelessWidget {
-  final IconData icon;
+  final IconData? icon;
   const NMButton({this.icon});
   @override
   Widget build(BuildContext context) {

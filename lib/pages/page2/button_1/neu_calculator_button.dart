@@ -5,12 +5,12 @@ import 'concave_decoration.dart';
 
 class NeuCalculatorButton extends StatefulWidget {
   NeuCalculatorButton({
-    Key key,
-    @required this.text,
+    Key? key,
+    required this.text,
     this.textColor,
     this.textSize,
     this.isPill = false,
-    @required this.onPressed,
+    required this.onPressed,
     this.isChosen = false,
   }) : super(key: key);
 
@@ -18,8 +18,8 @@ class NeuCalculatorButton extends StatefulWidget {
   final bool isPill;
   final VoidCallback onPressed;
   final String text;
-  final Color textColor;
-  final double textSize;
+  final Color? textColor;
+  final double? textSize;
 
   @override
   _NeuCalculatorButtonState createState() => _NeuCalculatorButtonState();
@@ -63,7 +63,7 @@ class _NeuCalculatorButtonState extends State<NeuCalculatorButton> {
     );
 
     final outerShadow = BoxDecoration(
-      border: Border.all(color: neumorphicTheme.borderColor),
+      border: Border.all(color: neumorphicTheme.borderColor!),
       borderRadius: BorderRadius.circular(buttonSize.width),
       color: neumorphicTheme.buttonColor,
       boxShadow: neumorphicTheme.outerShadow,

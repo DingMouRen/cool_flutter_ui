@@ -26,7 +26,7 @@ class _Page1State extends State<Page1> {
   Color _switchActiveColor = Colors.yellow;
   Color _switchInActiveColor = Colors.yellow.withAlpha(100);
 
-  Timer _timer;
+  late Timer _timer;
 
   @override
   void initState() {

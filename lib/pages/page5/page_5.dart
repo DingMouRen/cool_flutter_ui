@@ -29,12 +29,12 @@ class _Page5State extends State<Page5>{
                   borderRadius: BorderRadius.all(Radius.circular(50)),
                   boxShadow: [
                     BoxShadow(
-                        color: darkMode ? Colors.black54 : Colors.grey[500],
+                        color: darkMode ? Colors.black54 : Colors.grey[500]!,
                         offset: Offset(4.0, 4.0),
                         blurRadius: 15.0,
                         spreadRadius: 1.0),
                     BoxShadow(
-                        color: darkMode ? Colors.grey[800] : Colors.white,
+                        color: darkMode ? Colors.grey[800]! : Colors.white,
                         offset: Offset(-4.0, -4.0),
                         blurRadius: 15.0,
                         spreadRadius: 1.0),

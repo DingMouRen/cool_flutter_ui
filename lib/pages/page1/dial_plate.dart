@@ -5,18 +5,18 @@ import 'package:flutter/material.dart';
 
 ///表盘
 class DialPlate extends CustomPainter {
-  Paint _paintDial;
-  Paint _paintGradient;
-  double _radius;
+  late Paint _paintDial;
+  late Paint _paintGradient;
+  late double _radius;
 
-  double _screenWidth;
-  double _screenHeight;
+  late double _screenWidth;
+  late double _screenHeight;
   int _numPoint = 24;
-  ParagraphBuilder _timeParagraphBuilder;
+  late ParagraphBuilder _timeParagraphBuilder;
 
   //渐变颜色
-  Color _startColor;
-  Color _endColor;
+  late Color _startColor;
+  late Color _endColor;
 
   DialPlate(BuildContext context,Color startColor,Color endColor) {
     _screenWidth = MediaQuery.of(context).size.width;

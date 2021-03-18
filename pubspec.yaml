@@ -6,7 +6,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -15,7 +15,6 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   oktoast: ^3.0.0
-  font_awesome_flutter: ^8.8.1
 
 
 dev_dependencies:
@@ -23,15 +22,14 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
-
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/image/
     - assets/image/test2.jpg
     - assets/screenShot/
     - assets/image/avatar.JPG
+  fonts:
+    - family: NeumorphicIcons
+      fonts:
+        - asset: assets/fonts/NeumorphicIcons.ttf

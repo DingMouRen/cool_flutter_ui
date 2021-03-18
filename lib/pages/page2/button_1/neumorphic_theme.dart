@@ -9,10 +9,10 @@ class NeumorphicTheme {
     this.isDark = false,
   });
 
-  final List<BoxShadow> outerShadow;
-  final List<Color> innerShadowColors;
-  final Color borderColor;
-  final Color buttonColor;
+  final List<BoxShadow>? outerShadow;
+  final List<Color>? innerShadowColors;
+  final Color? borderColor;
+  final Color? buttonColor;
   final bool isDark;
 }
 

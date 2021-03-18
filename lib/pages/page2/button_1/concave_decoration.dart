@@ -5,19 +5,17 @@ import 'package:flutter/material.dart';
 class ConcaveDecoration extends Decoration {
   final ShapeBorder shape;
   final double depression;
-  final List<Color> colors;
+  final List<Color>? colors;
 
   ConcaveDecoration({
-    @required this.shape,
-    @required this.depression,
+    required this.shape,
+    required this.depression,
     this.colors,
-  })  : assert(shape != null),
-        assert(depression >= 0),
-        assert(colors == null || colors.length == 2);
+  });
 
   @override
-  BoxPainter createBoxPainter([onChanged]) =>
-      _ConcaveDecorationPainter(shape, depression, colors);
+  BoxPainter createBoxPainter([VoidCallback? onChanged]) =>
+      _ConcaveDecorationPainter(shape, depression, colors!);
 
   @override
   EdgeInsetsGeometry get padding => shape.dimensions;
@@ -35,7 +33,7 @@ class _ConcaveDecorationPainter extends BoxPainter {
   @override
   void paint(
       ui.Canvas canvas, ui.Offset offset, ImageConfiguration configuration) {
-    final rect = offset & configuration.size;
+    final rect = offset & configuration.size!;
     final shapePath = shape.getOuterPath(rect);
 
     final delta = 16 / rect.longestSide;

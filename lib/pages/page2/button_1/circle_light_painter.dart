@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CircleLightPainter extends CustomPainter{
-  Paint _paintRadialGradientLeft;
-  Paint _paintRadialGradientRight;
+  late Paint _paintRadialGradientLeft;
+  late Paint _paintRadialGradientRight;
 
-  Offset _offsetLeft;
-  Offset _offsetRight;
-  double _radius;
+  late Offset _offsetLeft;
+  late Offset _offsetRight;
+  late double _radius;
 
   CircleLightPainter(double radius){
     this._radius = radius;

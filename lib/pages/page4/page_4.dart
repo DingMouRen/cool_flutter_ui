@@ -20,7 +20,7 @@ class _Page4Sate extends State<Page4> {
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
-                    color: Colors.grey[600],
+                    color: Colors.grey[600]!,
                     offset: Offset(4.0, 4.0),
                     blurRadius: 15.0,
                     spreadRadius: 1.0),
@@ -34,10 +34,10 @@ class _Page4Sate extends State<Page4> {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    Colors.grey[200],
-                    Colors.grey[300],
-                    Colors.grey[400],
-                    Colors.grey[500],
+                    Colors.grey[200]!,
+                    Colors.grey[300]!,
+                    Colors.grey[400]!,
+                    Colors.grey[500]!,
                   ],
                   stops: [
                     0.1,
