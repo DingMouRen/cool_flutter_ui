@@ -34,7 +34,7 @@ class _Page2State extends State<Page2> {
             SizedBox(
               height: 20,
             ),
-            _getClockWIdget(),
+            _getClockWidget(),
             Expanded(child: SizedBox(),),
             _getBottomBar(context)
 
@@ -95,7 +95,7 @@ class _Page2State extends State<Page2> {
     );
   }
 
-  _getClockWIdget() {
+  _getClockWidget() {
     if(watch == Watch.TIME || watch == Watch.ALARM) return AlarmGroupWidget();
     return StopWatchGroupWidget();
   }
