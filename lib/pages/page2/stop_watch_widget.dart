@@ -1,10 +1,13 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:event_bus/event_bus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/config/application.dart';
 import 'package:flutter_ui/neumorphic/widget/container.dart';
+import 'package:flutter_ui/pages/page2/event/stop_watch_tevent.dart';
 
 enum StopWatchState{TIME,STOP,RESET}
 
@@ -20,27 +23,39 @@ class StopWatchWidget extends StatefulWidget {
 
 class _StopWatchWidgetState extends State<StopWatchWidget> {
 
-
-  late Timer _timer;
+  Timer? _timer ;
   String _time = '00:00:00';
   int _timeMilliseconds = 0;
 
   @override
   void initState() {
     super.initState();
-    _timer = Timer.periodic(Duration(milliseconds: 10), (timer) {
-      setState(() {
-        _timeMilliseconds+=10;
-        var duration = Duration(milliseconds: _timeMilliseconds);
-        String durationStr = duration.toString();
-        _time = durationStr.substring(0,durationStr.length - 4);
-      });
+
+
+    Application.eventBus.on<StopWatchEvent>().listen((event) {
+      print('${event.stopWatchState.toString()}');
+      if(event.stopWatchState == StopWatchState.TIME){
+        _timer = Timer.periodic(Duration(milliseconds: 10), (timer) {
+          setState(() {
+            _timeMilliseconds+=10;
+            var duration = Duration(milliseconds: _timeMilliseconds);
+            String durationStr = duration.toString();
+            _time = durationStr.substring(0,durationStr.length - 4);
+          });
+        });
+      }else if(event.stopWatchState == StopWatchState.STOP){
+        _timer!.cancel();
+      }else if(event.stopWatchState == StopWatchState.RESET){
+        _timeMilliseconds = 0;
+        _time = '00:00:00';
+        _timer!.cancel();
+      }
     });
   }
 
   @override
   void dispose() {
-    _timer.cancel();
+    _timer!.cancel();
     super.dispose();
   }
 

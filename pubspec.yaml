@@ -15,6 +15,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   oktoast: ^3.0.0
+  event_bus: ^2.0.0
 
 
 dev_dependencies:

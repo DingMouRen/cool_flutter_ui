@@ -1,7 +1,10 @@
+import 'package:event_bus/event_bus.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_ui/config/application.dart';
 import 'package:flutter_ui/neumorphic/widget/button.dart';
 import 'package:flutter_ui/neumorphic/widget/container.dart';
 import 'package:flutter_ui/neumorphic/widget/switch.dart';
+import 'package:flutter_ui/pages/page2/event/stop_watch_tevent.dart';
 import 'package:flutter_ui/pages/page2/stop_watch_widget.dart';
 
 ///切换秒表时显示
@@ -13,7 +16,7 @@ class StopWatchGroupWidget extends StatefulWidget {
 }
 
 class _StopWatchGroupWidgetState extends State<StopWatchGroupWidget> {
-
+  bool _isTime = false;
   @override
   void initState() {
     super.initState();
@@ -134,14 +137,24 @@ class _StopWatchGroupWidgetState extends State<StopWatchGroupWidget> {
               width: 130,
               alignment: Alignment.center,
               child: Text(
-                'Start',
+                _isTime?'Stop':'Start',
                 style: TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 20,
                     color: Color.fromARGB(255, 64, 83, 118)),
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              setState(() {
+                _isTime = !_isTime;
+                if(_isTime){
+                  Application.eventBus.fire(StopWatchEvent(StopWatchState.TIME));
+                }else{
+                  Application.eventBus.fire(StopWatchEvent(StopWatchState.STOP));
+                }
+
+              });
+            },
           ),
 
           NeumorphicButton(
@@ -159,10 +172,17 @@ class _StopWatchGroupWidgetState extends State<StopWatchGroupWidget> {
                     color: Color.fromARGB(255, 234, 111, 113)),
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+
+              setState(() {
+                Application.eventBus.fire(StopWatchEvent(StopWatchState.RESET));
+              });
+            },
           ),
         ],
       ),
     );
   }
+
+
 }
