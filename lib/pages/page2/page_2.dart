@@ -4,6 +4,11 @@ import 'package:flutter_ui/neumorphic/neumorphic_box_shape.dart';
 import 'package:flutter_ui/neumorphic/widget/app_bar.dart';
 import 'package:flutter_ui/neumorphic/widget/button.dart';
 import 'package:flutter_ui/neumorphic/widget/container.dart';
+import 'package:flutter_ui/neumorphic/widget/switch.dart';
+import 'package:flutter_ui/pages/page2/alarm_group_widget.dart';
+import 'package:flutter_ui/pages/page2/bottom_bar_widget.dart';
+import 'package:flutter_ui/pages/page2/stop_watch_group_widget.dart';
+import 'package:flutter_ui/pages/page2/watch_widget.dart';
 import 'package:oktoast/oktoast.dart';
 
 class Page2 extends StatefulWidget {
@@ -14,8 +19,12 @@ class Page2 extends StatefulWidget {
 }
 
 class _Page2State extends State<Page2> {
+
+  late Watch watch = Watch.ALARM;
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Container(
         color: Color.fromARGB(255, 227, 237, 247),
@@ -25,7 +34,10 @@ class _Page2State extends State<Page2> {
             SizedBox(
               height: 20,
             ),
-            _LayoutDialPlate(context),
+            _getClockWIdget(),
+            Expanded(child: SizedBox(),),
+            _getBottomBar(context)
+
           ],
         ),
       ),
@@ -71,7 +83,20 @@ class _Page2State extends State<Page2> {
     );
   }
 
-  _LayoutDialPlate(BuildContext context) {
-    return Neumorphic();
+
+  _getBottomBar(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(left: 16,right: 16,bottom: 30),
+      child: BottomBarWidget(watch: watch, onChanged: (watch){
+        setState(() {
+          this.watch = watch;
+        });
+      }),
+    );
+  }
+
+  _getClockWIdget() {
+    if(watch == Watch.TIME || watch == Watch.ALARM) return AlarmGroupWidget();
+    return StopWatchGroupWidget();
   }
 }
