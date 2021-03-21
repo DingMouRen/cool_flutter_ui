@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget{
 
   final List<String> listGif = [
     'assets/screenShot/page1.gif',
-    'assets/screenShot/page1.gif',
+    'assets/screenShot/page2.webp',
     'assets/screenShot/page1.gif',
     'assets/screenShot/page1.gif',
     'assets/screenShot/page1.gif',
@@ -30,6 +30,7 @@ class HomePage extends StatelessWidget{
       appBar: AppBar(
         title: Text("flutter ui"),
         centerTitle: true,
+        elevation: 0,
       ),
       body: _getGridView(context),
     );
@@ -64,7 +65,7 @@ class HomePage extends StatelessWidget{
       },
       child: Card(
           child: Image.asset(listGif[index]),
-          elevation: 6,
+          elevation: 0,
           // shadowColor: Colors.primaries[index % Colors.primaries.length],
           color: Colors.white,
         ),
