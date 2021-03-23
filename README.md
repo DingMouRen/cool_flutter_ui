@@ -7,3 +7,4 @@
 
 ### UI
 Thanks [Jatin Lathiya](https://dribbble.com/shots/8200836-Skeuomorph-Clock-App).
+Thanks [Filip Legierski](https://dribbble.com/shots/9517002--Light-Mode-Simple-Music-Player).
