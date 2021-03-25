@@ -27,9 +27,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/image/
-    - assets/image/test2.jpg
     - assets/screenShot/
-    - assets/image/avatar.JPG
   fonts:
     - family: NeumorphicIcons
       fonts:

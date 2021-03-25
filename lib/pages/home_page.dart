@@ -8,17 +8,10 @@ class HomePage extends StatelessWidget{
   final List<String> listGif = [
     'assets/screenShot/page1.gif',
     'assets/screenShot/page2.webp',
+    'assets/screenShot/page3.gif',
+    'assets/screenShot/page4.gif',
     'assets/screenShot/page1.gif',
-    'assets/screenShot/page1.gif',
-    'assets/screenShot/page1.gif',
-    'assets/screenShot/page1.gif',
-    'assets/screenShot/page1.gif',
-    'assets/screenShot/page1.gif',
-    'assets/screenShot/page1.gif',
-    'assets/screenShot/page1.gif',
-    'assets/screenShot/page1.gif',
-    'assets/screenShot/page1.gif',
-    'assets/screenShot/page1.gif',
+
 
 
   ];
